@@ -1,13 +1,12 @@
-import { TwitterApi } from 'twitter-api-v2';
+const {TwitterApi} = require('twitter-api-v2');
 
-// Instanciate with desired auth type (here's Bearer v2 auth)
-const twitterClient = new TwitterApi('AAAAAAAAAAAAAAAAAAAAAObrcwEAAAAADTNZblo%2FedwSg%2BtbqN4GGukGtTQ%3DdK50a5SpDCoi2D0GeHWpoHWddjYhgjTks1Whhze05clM2PBip0');
+const client = new TwitterApi({
+  appKey:"zKOTdajtrQoG9xvYnivg8arN9",
+  appSecret:"ecinLLaIvFR9T4ocXmcLaBxybDh6GO1cMLMYHi5nmQDoGaQsSl",
+  accessToken:"1528897503860768768-76kWRcR5c6MpI8Yb2uGTmh4UkeInyG",
+  accessSecret:"4XbWutJjaw6mCo8FvwAWmJn6xUpHna0MQCNlfWvBeCBMe"
+});
 
-// Tell typescript it's a readonly app
-const roClient = twitterClient.readOnly;
+const rwclient = client.readWrite
 
-// Play with the built in methods
-const user = await roClient.v2.userByUsername('test');
-await twitterClient.v1.tweet('Hello, this is a test.');
-// You can upload media easily!
-//await twitterClient.v1.uploadMedia('./big-buck-bunny.mp4');
+module.exports = rwclient
