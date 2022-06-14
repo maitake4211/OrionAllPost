@@ -17,19 +17,11 @@ const tweet = async (sentence) => {
   }
 }
 
+// テスト用
+// tweet("test")
 
-let checktwitter = document.getElementById('twitter');
-
-function PostTwitter() {
+function PostTwitter(poststr) {
   if (checktwitter.cheched) {
-    const pushstr = document.getElementById('usercomment').value;
-    tweet(pushstr);
-  }
-}
-
-document.getElementById('form').onsubmit = function() {
-  if (checktwitter.cheched) {
-    const pushstr = document.getElementById('usercomment').value;
-    tweet(pushstr);
+    tweet(poststr);
   }
 }
