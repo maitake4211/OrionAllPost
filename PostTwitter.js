@@ -9,4 +9,27 @@ const client = new TwitterApi({
 
 const rwclient = client.readWrite
 
-module.exports = rwclient
+const tweet = async (sentence) => {
+  try {
+    await rwclient.v1.tweet(sentence)
+  } catch(e){
+    console.error(e)
+  }
+}
+
+
+let checktwitter = document.getElementById('twitter');
+
+function PostTwitter() {
+  if (checktwitter.cheched) {
+    const pushstr = document.getElementById('usercomment').value;
+    tweet(pushstr);
+  }
+}
+
+document.getElementById('form').onsubmit = function() {
+  if (checktwitter.cheched) {
+    const pushstr = document.getElementById('usercomment').value;
+    tweet(pushstr);
+  }
+}
