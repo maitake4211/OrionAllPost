@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>投稿フォーム</title>
 <link rel="stylesheet" href="style.css">
-
+<script type="text/javascript" src="Facebook_Post.js"></script>
 <!--[if lt IE 9]>
 <script src="html5shiv-printshiv.js"></script>
 <![endif]-->
@@ -45,8 +45,8 @@
         </div>
 
         <div>
-            <input type="checkbox" id="tiktok" name="tiktok">
-            <label for="tiktok">Tiktok</label>
+            <input type="checkbox" id="Facebook" name="Facebook">
+            <label for="Facebook">Facebook</label>
         </div>
 
         <div>
@@ -58,7 +58,7 @@
 
 
 
-<form action="https://www.rescue.ne.jp/form/mail.cgi" method="post">
+<form action="https://www.rescue.ne.jp/form/mail.cgi" method="post" id="text">
 <input type="hidden" name="_uid" value="XXXXXXXXXXXXXXXX">
 <input type="hidden" name="_done" value="http://www.www.www/">
 <input type="hidden" name="_subject" value="お問い合わせ">
@@ -66,7 +66,7 @@
 
 <p>
 <label>文章：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-<textarea name="usercomment"></textarea>
+<textarea name="usercomment" id="usercomment"></textarea>
 </label>
 </p>
 
@@ -103,7 +103,7 @@
 
 </p>
 
-<p><input type="submit" value="送信"></p>
+<p><input type="submit" id="Post" value="送信"></p>
 
 <small>Powered by <a href="http://www.rescue.ne.jp/" target="_blank">CGI RESCUE</a><sup>&reg;　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</sup></small>
 </form>
