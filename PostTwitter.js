@@ -9,19 +9,13 @@ const client = new TwitterApi({
 
 const rwclient = client.readWrite
 
-const tweet = async (sentence) => {
-  try {
-    await rwclient.v1.tweet(sentence)
-  } catch(e){
-    console.error(e)
-  }
-}
-
 // テスト用
 // tweet("test")
 
 function PostTwitter(poststr) {
-  if (checktwitter.cheched) {
-    tweet(poststr);
+  try {
+    rwclient.v1.tweet(poststr)
+  } catch (e) {
+    return (e)
   }
 }
