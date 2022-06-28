@@ -1,0 +1,17 @@
+{
+    "name": "ic171215/orion-all-post",
+    "autoload": {
+        "psr-4": {
+            "Ic171215\\OrionAllPost\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kogi-1027",
+            "email": "a.r460w@icloud.com"
+        }
+    ],
+    "require": {
+        "facebook/graph-sdk": "^5.1"
+    }
+}

@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 // グラフAPIの呼び出しで利用する認証情報。xxxxxxxxの箇所にそれぞれの情報をセット
 const FB_APP_ID = '347852470789457'; // アプリID
 const FB_APP_SECRET = '091d08e10da38cbd77b296222f004a52'; // app secret
-const FB_ACCESS_TOKEN = 'EAAE8Xrb0pVEBANYWHmormvI2kShfnokhkr4OEyr3JxTmkttkM2YJzewf0unu1s0LA5aAbEiolzZAIpZCcnwJHpkHCZCPJiKZAPWIsFtseDXImm6xZCmbLmD363fiEAo0kcJWLmQQgypkNz0b06UQLnNAZBX67NfiEuWO3y7hkVoobbqaqVFFgL5TBgAeHskeYZD'; // ページアクセストークン
+const FB_ACCESS_TOKEN = 'EAAE8Xrb0pVEBAAnzMrbfrxHSkIZCnKXhYXFxkMthXzarZBsTZAcPPmiEYBkY4YNHeV791IjnHjCPBzaKI1EFQHe2jFZAgmQWnANcoVuKfTMybIbmIl3NWa2rd3tjqn0nvlQuHcNvYwR4dA2ZA0LKf2J0mqWZATVlG5Hrs8Q4dKAyK3pm5tJ5TPNQpfVD3gYq8ZD'; // ページアクセストークン
 
 // Facebookクラスのインスタンスを作成
 $fb = new \Facebook\Facebook([
@@ -30,3 +30,4 @@ try {
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
 }
+ 
