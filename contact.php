@@ -1,3 +1,28 @@
+<?php
+define('FILENAME', './message.txt');
+
+date_default_timezone_set('Asia/Tokyo');
+$curret_date = null;
+$data = null;
+$file_handle = null;
+$split_data = null;
+$message = array();
+$message_array = array();
+
+if (!empty($_POST['usercomment'])) {
+	//var_dump($_POST);
+
+	if($file_handle = fopen(FILENAME, "a")) {
+		$current_date = date("Y-m-d H:i:s");
+
+		$data = "'オリオンビール広報部'".$_POST['usercomment']."'".$current_date."'\n";
+		fwrite($file_handle, $data);
+		
+		fclose($file_handle);
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -54,11 +79,12 @@
 
 
 
-<form action="https://www.rescue.ne.jp/form/mail.cgi" method="post">
+<form method="post">
+<!--
 <input type="hidden" name="_uid" value="XXXXXXXXXXXXXXXX">
-<input type="hidden" name="_done" value="http://www.www.www/">
+<input type="hidden" name="_done" value="http://localhost/board/index.php">
 <input type="hidden" name="_subject" value="お問い合わせ">
-
+-->
 
 <p>
 <label>文章：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
@@ -67,7 +93,6 @@
 </p>
 
 <p>
-    
     <table>
         <tr>
             <th>
@@ -81,24 +106,24 @@
             </td>
         </tr>
     </table>
-        <p>
-            <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
-        </p>
-        <script>
-            function previewImage(obj)
-            {
-                var fileReader = new FileReader();
-                fileReader.onload = (function() {
-                    document.getElementById('preview').src = fileReader.result;
-                });
-                fileReader.readAsDataURL(obj.files[0]);
-            }
-        </script>
-        
-    
 </p>
 
-<p><input type="submit" value="送信"></p>
+<p>
+   <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
+</p>
+        
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+</script>
+
+<p><input type="submit" name="btn_submit" value="送信"></p>
 
 <small>Powered by <a href="http://www.rescue.ne.jp/" target="_blank">CGI RESCUE</a><sup>&reg;　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</sup></small>
 </form>
