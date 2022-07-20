@@ -10,7 +10,7 @@ $split_data = null;
 $message = array();
 $message_array = array();
 
-if (!empty($_POST['usercomment'])) {
+if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 	if($file_handle = fopen(FILENAME, "a")) {
 		$current_date = date("Y-m-d H:i:s");
 		$data = "'オリオンビール広報部'".$_POST['usercomment']."'".$current_date."'\n";
@@ -36,11 +36,11 @@ if (!empty($_POST['usercomment'])) {
 
 	<body id="contact">
 		<header>
-			<h1><a href="index.html"><img src="logo.png" alt="">75 Beer</a></h1>
+			<h1><a href="index.<?php  ?>"><img src="logo.png" alt="">75 Beer</a></h1>
 
 			<nav>
 				<ul>
-					<li><a href="index.php">board</a></li>
+					<li><a href="board.php">board</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -49,7 +49,7 @@ if (!empty($_POST['usercomment'])) {
 			<section>
 
 				<h1>投稿フォーム</h1>
-				<form method="sns">
+					<form method="post">
 					<fieldset>
 						<legend>投稿先を選択</legend>
 
@@ -73,11 +73,7 @@ if (!empty($_POST['usercomment'])) {
 							<label for="web">Web</label>
 						</div>
 					</fieldset>
-				</form>
 
-
-
-				<form method="post">
 					<p>
 						<label>文章：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 							<textarea name="usercomment"></textarea>
