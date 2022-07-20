@@ -31,7 +31,7 @@ if (!empty($_POST['usercomment'])) {
 	<head>
 		<meta charset="UTF-8">
 		<title>投稿フォーム</title>
-		<link rel="stylesheet" href="style2.css">
+		<link rel="stylesheet" href="styleIndex.css">
 	</head>
 
 	<body id="contact">
