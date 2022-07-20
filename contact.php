@@ -10,14 +10,11 @@ $message = array();
 $message_array = array();
 
 if (!empty($_POST['usercomment'])) {
-	//var_dump($_POST);
-
 	if($file_handle = fopen(FILENAME, "a")) {
 		$current_date = date("Y-m-d H:i:s");
-
 		$data = "'オリオンビール広報部'".$_POST['usercomment']."'".$current_date."'\n";
 		fwrite($file_handle, $data);
-		
+
 		fclose($file_handle);
 	}
 }
@@ -100,7 +97,7 @@ if (!empty($_POST['usercomment'])) {
                     写真・動画:
                 </label>
             </th>
-        
+
             <td>
                 <input type="file" accept='image/*' onchange="previewImage(this);">
             </td>
@@ -111,7 +108,7 @@ if (!empty($_POST['usercomment'])) {
 <p>
    <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
 </p>
-        
+
 <script>
     function previewImage(obj)
     {
