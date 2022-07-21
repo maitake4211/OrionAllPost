@@ -1,3 +1,5 @@
+//SNSに実際に投稿するモジュールとindex.phpを関連付けるコード。
+
 window.onload=function(){
 
     var ajax = new XMLHttpRequest();//FaceBook_Post.phpと通信するためのオブジェクト
