@@ -33,6 +33,7 @@ if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 		<title>投稿フォーム</title>
 		<link rel="stylesheet" href="styleIndex.css">
 		<script type="text/javascript" src="link.js"></script>
+		<script src="PostTwitter.js"> </script>
 	</head>
 
 	<body id="contact">
