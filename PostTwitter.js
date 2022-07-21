@@ -10,7 +10,7 @@ const client = new TwitterApi({
 const rwclient = client.readWrite
 
 // テスト用
-// tweet("test")
+// PostTwitter("test")
 
 function PostTwitter(poststr) {
   try {
