@@ -17,11 +17,11 @@ try {
     // Facebookページへ投稿
     $message = $_POST['usercomment']; // 投稿内容
     //$message = 'aaaaaaaa'.'xxxxxxxx';
-    $imgpath = 'C:/Users/ar460/Documents/OrionAllPost/'.$_POST['imgpath'];
+    //$imgpath = 'C:/Users/ar460/Documents/OrionAllPost/'.$_POST['imgpath'];
     //$url = 'example.com'; // 投稿に含めるリンク
-    $response = $fb->post('/me/photos', [
+    $response = $fb->post('/me/feed', [
         'message' => $message,
-        'source' => $fb->fileToUpload($imgpath),
+        //'source' => $fb->fileToUpload($imgpath),
         //'link' => $url,
     ], FB_ACCESS_TOKEN);
 

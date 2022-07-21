@@ -32,6 +32,7 @@ if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 		<meta charset="UTF-8">
 		<title>投稿フォーム</title>
 		<link rel="stylesheet" href="styleIndex.css">
+		<script type="text/javascript" src="main.js"></script>
 	</head>
 
 	<body id="contact">
