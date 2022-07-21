@@ -3,9 +3,9 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // グラフAPIの呼び出しで利用する認証情報。xxxxxxxxの箇所にそれぞれの情報をセット
-const FB_APP_ID = '347852470789457'; // アプリID
-const FB_APP_SECRET = '091d08e10da38cbd77b296222f004a52'; // app secret
-const FB_ACCESS_TOKEN = 'EAAE8Xrb0pVEBAAnzMrbfrxHSkIZCnKXhYXFxkMthXzarZBsTZAcPPmiEYBkY4YNHeV791IjnHjCPBzaKI1EFQHe2jFZAgmQWnANcoVuKfTMybIbmIl3NWa2rd3tjqn0nvlQuHcNvYwR4dA2ZA0LKf2J0mqWZATVlG5Hrs8Q4dKAyK3pm5tJ5TPNQpfVD3gYq8ZD'; // ページアクセストークン
+const FB_APP_ID = ''; // アプリID
+const FB_APP_SECRET = ''; // app secret
+const FB_ACCESS_TOKEN = ''; // ページアクセストークン
 
 // Facebookクラスのインスタンスを作成
 $fb = new \Facebook\Facebook([
@@ -15,11 +15,14 @@ $fb = new \Facebook\Facebook([
 
 try {
     // Facebookページへ投稿
-    $message = 'テスト投稿'; // 投稿内容
-    $url = 'example.com'; // 投稿に含めるリンク
-    $response = $fb->post('/me/feed', [
+    $message = $_POST['usercomment']; // 投稿内容
+    //$message = 'aaaaaaaa'.'xxxxxxxx';
+    $imgpath = 'C:/Users/ar460/Documents/OrionAllPost/'.$_POST['imgpath'];
+    //$url = 'example.com'; // 投稿に含めるリンク
+    $response = $fb->post('/me/photos', [
         'message' => $message,
-        'link' => $url,
+        'source' => $fb->fileToUpload($imgpath),
+        //'link' => $url,
     ], FB_ACCESS_TOKEN);
 
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
@@ -30,4 +33,3 @@ try {
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
 }
- 
