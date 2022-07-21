@@ -66,8 +66,8 @@ if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 						</div>
 
 						<div>
-							<input type="checkbox" id="tiktok" name="tiktok">
-							<label for="tiktok">Tiktok</label>
+							<input type="checkbox" id="facebook" name="tiktok">
+							<label for="tiktok">FaceBook_Post</label>
 						</div>
 
 						<div>

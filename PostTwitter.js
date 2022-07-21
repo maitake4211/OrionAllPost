@@ -7,15 +7,17 @@ const client = new TwitterApi({
   accessSecret:"4XbWutJjaw6mCo8FvwAWmJn6xUpHna0MQCNlfWvBeCBMe"
 });
 
-const rwclient = client.readWrite
+const rwclient = client.readWrite;
 
 // テスト用
 // PostTwitter("test")
 
 function PostTwitter(poststr) {
   try {
-    rwclient.v1.tweet(poststr)
+    rwclient.v1.tweet(poststr);
   } catch (e) {
-    return (e)
+    return (e);
   }
 }
+
+export {PostTwitter};
