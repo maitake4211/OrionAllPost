@@ -32,8 +32,7 @@ if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 		<meta charset="UTF-8">
 		<title>投稿フォーム</title>
 		<link rel="stylesheet" href="styleIndex.css">
-		<script type="text/javascript" src="link.js"></script>
-		<script src="PostTwitter.js"> </script>
+		<script src="link.js"></script>
 	</head>
 
 	<body id="contact">
@@ -78,11 +77,11 @@ if (!empty($_POST['usercomment']) && isset($_POST['web'])) {
 
 					<p>
 						<label>文章：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-							<textarea name="usercomment"></textarea>
+							<textarea id="usercomment" name="usercomment"></textarea>
 						</label>
 					</p>
 					<p>
-						<input type="submit" name="btn_submit" value="送信">
+						<input type="submit" name="submit" value="送信">
 					</p>
 
 					<small>Powered by <a href="http://www.rescue.ne.jp/" target="_blank">CGI RESCUE</a><sup>&reg;　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</sup></small>
